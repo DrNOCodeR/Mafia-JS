@@ -1,0 +1,31 @@
+function randomSort(a, b) {
+  a = Math.random();
+  return 0.5 - a;
+}
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]; 
+arr.sort(randomSort);
+console.log(arr);
+
+
+
+function createRandomArray() {
+  let arr = [];
+  
+  for (let i = 0; i < 3; i++) {
+    arr.push('мафия');
+  }
+
+  for (let i = 0; i < 6; i++) {
+    arr.push('мирный');
+  }
+
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+
+  return arr;
+}
+
+let randomArray = createRandomArray();
+console.log(randomArray);
